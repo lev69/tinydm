@@ -1,0 +1,6 @@
+#pragma once
+
+#define tinydm_common_VERSION_MAJOR @tinydm_common_VERSION_MAJOR@
+#define tinydm_common_VERSION_MINOR @tinydm_common_VERSION_MINOR@
+#define tinydm_common_VERSION_PATCH @tinydm_common_VERSION_PATCH@
+
