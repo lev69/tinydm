@@ -8,10 +8,8 @@ json::value toJson(const list<DiskInfo> &diskList)
 	{
 		diskArray[idx++] = toJson(*i);
 	}
-	auto result = json::value::object();
-	result["drives"] = diskArray;
 
-	return result;
+	return diskArray;
 }
 
 json::value toJson(const DiskInfo &diskInfo)

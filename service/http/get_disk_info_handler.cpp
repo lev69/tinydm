@@ -1,3 +1,4 @@
+#include <tinydm_common_version.h>
 #include <disk/disk_manager.h>
 #include <modules/json_disk_info.h>
 
@@ -30,6 +31,7 @@ void GetDiskInfoHandler::run()
 
 	auto response = json::value::object();
 	response["drives"] = toJson(dm->diskList());
+	response["lib_version"] = json::value::string(U(tinydm_common_version()));
 	_message.reply(status_codes::OK, response);
 }
 

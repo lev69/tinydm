@@ -23,19 +23,19 @@ message(STATUS "CMAKE_C_FLAGS = " ${CMAKE_C_FLAGS})
 message(STATUS "CMAKE_CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
 
 ### search common sources
-#set(TINYDM_COMMON_SOURCE_DIR
-#	"${CMAKE_CURRENT_SOURCE_DIR}/../common")
-#if(NOT EXISTS "${TINYDM_COMMON_SOURCE_DIR}/CMakeLists.txt")
-#	message(FATAL_ERROR "common sources not found")
-#endif()
+set(TINYDM_COMMON_SOURCE_DIR
+	"${CMAKE_CURRENT_SOURCE_DIR}/../common")
+if(NOT EXISTS "${TINYDM_COMMON_SOURCE_DIR}/CMakeLists.txt")
+	message(FATAL_ERROR "common sources not found")
+endif()
 
-#add_subdirectory(${TINYDM_COMMON_SOURCE_DIR} "common")
-#include_directories(${CMAKE_CURRENT_BINARY_DIR}/common)
-#if (NOT TINYDM_COMMON_INCLUDE_DIR)
-#	message(FATAL_ERROR "Expected variable TINYDM_COMMON_INCLUDE_DIR is not set")
-#endif()
+add_subdirectory(${TINYDM_COMMON_SOURCE_DIR} "common")
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/common)
+if (NOT TINYDM_COMMON_INCLUDE_DIR)
+	message(FATAL_ERROR "Expected variable TINYDM_COMMON_INCLUDE_DIR is not set")
+endif()
 
-#include_directories(${TINYDM_COMMON_INCLUDE_DIR})
+include_directories(${TINYDM_COMMON_INCLUDE_DIR})
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 

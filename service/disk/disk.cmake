@@ -1,7 +1,5 @@
 set(SHARED_SOURCES ${SHARED_SOURCES}
 	${current_SUBDIR}/disk_manager.cpp
-	${current_SUBDIR}/disk_info.cpp
-	${current_SUBDIR}/partition_info.cpp
 	${current_SUBDIR}/disk_info_fabric.cpp
 	)
 

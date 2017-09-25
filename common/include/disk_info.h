@@ -5,7 +5,7 @@
 #include <list>
 #include <string>
 
-#include <disk/partition_info.h>
+#include <partition_info.h>
 
 using namespace std;
 

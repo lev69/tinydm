@@ -2,7 +2,7 @@
 #define DEBUG_DISK_INFO_H
 
 #include <cpprest/json.h>
-#include <disk/disk_info.h>
+#include <disk_info.h>
 
 using namespace web;
 

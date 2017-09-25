@@ -20,10 +20,10 @@ endif()
 message(STATUS "CMAKE_C_FLAGS = " ${CMAKE_C_FLAGS})
 message(STATUS "CMAKE_CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
 
-set(CMAKE_AUTOMOC ON)
+#set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-find_package(Qt5Core REQUIRED)
+#find_package(Qt5Core REQUIRED)
 
 macro(INCLUDE_SUBDIR SUBDIR)
 	set(current_SUBDIR ${CMAKE_CURRENT_SOURCE_DIR}/${SUBDIR})
@@ -34,7 +34,9 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/common_cmake_config.h.in
 	${CMAKE_CURRENT_BINARY_DIR}/common_cmake_config.h)
 
 set(tinydm_common_SOURCES
-	message_handler.cpp
+#	message_handler.cpp
+    disk_info.cpp
+    partition_info.cpp
 	)
 
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
@@ -56,7 +58,7 @@ else()
 endif()
 
 add_library(${PROJECT_NAME} ${LIB_BUILD_TYPE} ${tinydm_common_SOURCES})
-target_link_libraries(${PROJECT_NAME} ${tinydm_common_LIBRARIES} Qt5::Core)
+target_link_libraries(${PROJECT_NAME} ${tinydm_common_LIBRARIES})
 
 set(TINYDM_COMMON_INCLUDE_DIR ${INCLUDE_DIR} PARENT_SCOPE)
 set(TINYDM_COMMON_LINK_LIBRARIES ${PROJECT_NAME} PARENT_SCOPE)

@@ -1,7 +1,7 @@
 #ifndef DISK_INFO_FABRIC_H
 #define DISK_INFO_FABRIC_H
 
-#include <disk/disk_info.h>
+#include <disk_info.h>
 
 class DiskInfoFabric
 {
