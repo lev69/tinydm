@@ -1,0 +1,6 @@
+#pragma once
+
+#define tinydm_gui_VERSION_MAJOR @tinydm_gui_VERSION_MAJOR@
+#define tinydm_gui_VERSION_MINOR @tinydm_gui_VERSION_MINOR@
+#define tinydm_gui_VERSION_PATCH @tinydm_gui_VERSION_PATCH@
+
