@@ -29,5 +29,6 @@ void RestController::reqDiskInfo()
 	catch (const std::exception &e)
 	{
 		qCritical() << Q_FUNC_INFO << e.what();
+		emit error(e.what());
 	}
 }

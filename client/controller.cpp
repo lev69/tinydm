@@ -56,6 +56,8 @@ void Controller::init()
 			restCtl, &RestController::deleteLater);
 	connect(restCtl, &RestController::diskInfoReceived,
 			this, &Controller::updateDiskInfo);
+	connect(restCtl, &RestController::error,
+			this, &Controller::onError);
 	_restThread.start();
 	QTimer::singleShot(0, restCtl, &RestController::reqDiskInfo);
 
@@ -99,4 +101,12 @@ void Controller::updateDiskInfo(const std::vector<DiskInfo> &diskList)
 
 		root->appendRow(diskItems);
 	});
+}
+
+void Controller::onError(const QString &msg)
+{
+	QMessageBox dlg(QMessageBox::Critical, tr("Error"), msg, QMessageBox::Ok);
+	dlg.exec();
+
+	qApp->quit();
 }

@@ -23,6 +23,7 @@ signals:
 public slots:
 	void init();
 	void updateDiskInfo(const std::vector<DiskInfo> &diskList);
+	void onError(const QString &msg);
 };
 
 #endif // CONTROLLER_H

@@ -16,6 +16,7 @@ public:
 
 signals:
 	void diskInfoReceived(const std::vector<DiskInfo> &diskList);
+	void error(const QString &errMsg);
 
 public slots:
 	void init();
