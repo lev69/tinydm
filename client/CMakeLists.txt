@@ -58,6 +58,12 @@ set(tinydm_gui_SOURCES
 	main.cpp
 	rest_client.cpp
 	json_module.cpp
+	message_handler.cpp
+	settings_dialog.cpp
+	controller.cpp
+	main_window.cpp
+	rest_controller.cpp
+	disk_item_model.cpp
 	)
 
 set(SHARED_SOURCES)

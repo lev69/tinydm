@@ -13,7 +13,7 @@ using namespace client;
 
 using namespace concurrency::streams;
 
-RestClient::RestClient(const RestClient::Options &options)
+RestClient::RestClient(const ConnectionOptions &options)
 	: _options(options)
 {
 }

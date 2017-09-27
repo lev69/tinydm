@@ -5,23 +5,15 @@
 #include <list>
 
 #include <disk_info.h>
+#include <connection_options.h>
 
 class RestClient
 {
-public:
-	struct Options
-	{
-		std::string schema;
-		std::string host;
-		unsigned short port;
-		std::string path;
-	};
-
 private:
-	Options _options;
+	ConnectionOptions _options;
 
 public:
-	RestClient(const Options &options);
+	RestClient(const ConnectionOptions &options);
 
 	std::list<DiskInfo> getDiskInfo();
 };
