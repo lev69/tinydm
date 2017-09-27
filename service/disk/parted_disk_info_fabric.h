@@ -16,11 +16,11 @@ public:
 	PartedDiskInfoFabric();
 	virtual ~PartedDiskInfoFabric();
 
-	virtual list<DiskInfo> getDiskInfo();
+	virtual vector<DiskInfo> getDiskInfo();
 
 private:
-	list<DiskInfo> listAllDrives();
-	list<PartitionInfo> listAllPartitions(PedDevice *dev);
+	vector<DiskInfo> listAllDrives();
+	vector<PartitionInfo> listAllPartitions(PedDevice *dev);
 	PartitionInfo partitionInfo(PedPartition *part);
 };
 

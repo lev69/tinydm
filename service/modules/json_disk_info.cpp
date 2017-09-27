@@ -1,6 +1,6 @@
 #include "json_disk_info.h"
 
-json::value toJson(const list<DiskInfo> &diskList)
+json::value toJson(const vector<DiskInfo> &diskList)
 {
 	auto diskArray = json::value::array();
 	int idx = 0;
@@ -22,7 +22,7 @@ json::value toJson(const DiskInfo &diskInfo)
 	return json;
 }
 
-json::value toJson(const list<PartitionInfo> &parts)
+json::value toJson(const vector<PartitionInfo> &parts)
 {
 	auto json = json::value::array();
 	int idx = 0;

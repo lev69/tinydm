@@ -6,12 +6,12 @@
 class DiskManager
 {
 	DiskInfoFabric *_diskFabric;
-	list<DiskInfo> _diskList;
+	vector<DiskInfo> _diskList;
 
 public:
 	DiskManager();
 
-	list<DiskInfo> diskList() const;
+	vector<DiskInfo> diskList() const;
 
 	void initDisks();
 };

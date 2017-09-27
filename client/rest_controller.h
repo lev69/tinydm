@@ -15,7 +15,7 @@ public:
 	~RestController();
 
 signals:
-	void diskInfoReceived(const std::list<DiskInfo> &diskList);
+	void diskInfoReceived(const std::vector<DiskInfo> &diskList);
 
 public slots:
 	void init();

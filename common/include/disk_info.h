@@ -2,7 +2,7 @@
 #define DISK_INFO_H
 
 #include <iostream>
-#include <list>
+#include <vector>
 #include <string>
 
 #include <partition_info.h>
@@ -11,16 +11,16 @@ using namespace std;
 
 class DiskInfo
 {
-	list<PartitionInfo> _partitions;
+	vector<PartitionInfo> _partitions;
 	string _volume;
 	int64_t _size;
 
 public:
 	DiskInfo();
 
-	void setPartitions(const list<PartitionInfo> &partList);
+	void setPartitions(const vector<PartitionInfo> &partList);
 	void addPartition(const PartitionInfo &part);
-	list<PartitionInfo> partitions() const;
+	vector<PartitionInfo> partitions() const;
 
 	string volume() const;
 	void setVolume(const string &volume);

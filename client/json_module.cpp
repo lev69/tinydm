@@ -5,7 +5,7 @@
 
 using namespace std;
 
-list<DiskInfo> fromJson(const json::value &diskInfoJson)
+vector<DiskInfo> fromJson(const json::value &diskInfoJson)
 {
 	string serverLibVersion = diskInfoJson.at("lib_version").as_string();
 	string myVersion = tinydm_common_version();
@@ -18,7 +18,7 @@ list<DiskInfo> fromJson(const json::value &diskInfoJson)
 	}
 
 	auto drives = diskInfoJson.at("drives").as_array();
-	list<DiskInfo> diskList;
+	vector<DiskInfo> diskList;
 
 	for_each (drives.begin(), drives.end(), [&diskList](json::value value)
 	{
@@ -38,10 +38,10 @@ DiskInfo diskFromJson(const json::value &diskJson)
 	return info;
 }
 
-std::list<PartitionInfo> partListFromJson(const json::value &partListJson)
+std::vector<PartitionInfo> partListFromJson(const json::value &partListJson)
 {
 	auto parts = partListJson.as_array();
-	list<PartitionInfo> partList;
+	vector<PartitionInfo> partList;
 	for_each (parts.begin(), parts.end(), [&partList](json::value value)
 	{
 		partList.push_back(partFromJson(value));

@@ -8,16 +8,20 @@ class MainWindow : public QWidget
 {
 	Q_OBJECT
 
-	QTableView *_tableView;
+	QTreeView *_tableView;
 
 public:
 	MainWindow(QWidget *parent = 0);
 	~MainWindow();
 
 signals:
+	void needUpdate();
 
 public slots:
-	void setModel(QAbstractItemModel *model);
+	void setModel(QStandardItemModel *model);
+
+private slots:
+	void adjustModel();
 
 private:
 	void setupUi();

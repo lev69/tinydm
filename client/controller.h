@@ -3,15 +3,15 @@
 
 #include <QObject>
 #include <QThread>
+#include <QStandardItemModel>
 #include <disk_info.h>
-#include <disk_item_model.h>
 
 class Controller : public QObject
 {
 	Q_OBJECT
 
 	QThread _restThread;
-	DiskItemModel _diskModel;
+	QStandardItemModel *_diskModel;
 
 public:
 	Controller(QObject *parent = 0);
@@ -22,7 +22,7 @@ signals:
 
 public slots:
 	void init();
-	void updateDiskInfo(const std::list<DiskInfo> &diskList);
+	void updateDiskInfo(const std::vector<DiskInfo> &diskList);
 };
 
 #endif // CONTROLLER_H

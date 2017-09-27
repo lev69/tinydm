@@ -5,7 +5,7 @@ RestController::RestController(const ConnectionOptions &connOptions,
 							   QObject *parent)
 	: QObject(parent), _client(nullptr), _connOptions(connOptions)
 {
-	qRegisterMetaType<std::list<DiskInfo> >("std::list<DiskInfo>");
+	qRegisterMetaType<std::vector<DiskInfo> >("std::vector<DiskInfo>");
 }
 
 RestController::~RestController()

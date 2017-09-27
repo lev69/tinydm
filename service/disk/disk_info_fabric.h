@@ -9,7 +9,7 @@ public:
 	DiskInfoFabric();
 	virtual ~DiskInfoFabric();
 
-	virtual list<DiskInfo> getDiskInfo() = 0;
+	virtual vector<DiskInfo> getDiskInfo() = 0;
 };
 
 #endif // DISK_INFO_FABRIC_H

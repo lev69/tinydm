@@ -21,7 +21,7 @@ DiskManager::DiskManager()
 	}
 }
 
-list<DiskInfo> DiskManager::diskList() const
+vector<DiskInfo> DiskManager::diskList() const
 {
 	return _diskList;
 }

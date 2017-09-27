@@ -10,14 +10,14 @@ PartedDiskInfoFabric::~PartedDiskInfoFabric()
 {
 }
 
-list<DiskInfo> PartedDiskInfoFabric::getDiskInfo()
+vector<DiskInfo> PartedDiskInfoFabric::getDiskInfo()
 {
 	return listAllDrives();
 }
 
-list<DiskInfo> PartedDiskInfoFabric::listAllDrives()
+vector<DiskInfo> PartedDiskInfoFabric::listAllDrives()
 {
-	list<DiskInfo> diskList;
+	vector<DiskInfo> diskList;
 
 	ped_device_probe_all();
 	PedDevice *dev = NULL;
@@ -33,23 +33,24 @@ list<DiskInfo> PartedDiskInfoFabric::listAllDrives()
 
 		diskList.push_back(diskInfo);
 	}
+	ped_device_free_all();
 
 	return diskList;
 }
 
-list<PartitionInfo> PartedDiskInfoFabric::listAllPartitions(PedDevice *dev)
+vector<PartitionInfo> PartedDiskInfoFabric::listAllPartitions(PedDevice *dev)
 {
 	PedDisk *disk = ped_disk_new(dev);
 	if (disk == NULL)
 	{
 		cerr << "No disk found on device" << dev->path;
-		return list<PartitionInfo>();
+		return vector<PartitionInfo>();
 	}
 
 	int partNum = ped_disk_get_last_partition_num(disk);
 	PedPartition *part = NULL;
 
-	list<PartitionInfo> partList;
+	vector<PartitionInfo> partList;
 
 	for (int i = 1; i <= partNum; ++i)
 	{

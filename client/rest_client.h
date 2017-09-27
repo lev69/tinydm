@@ -2,7 +2,7 @@
 #define REST_CLIENT_H
 
 #include <string>
-#include <list>
+#include <vector>
 
 #include <disk_info.h>
 #include <connection_options.h>
@@ -15,7 +15,7 @@ private:
 public:
 	RestClient(const ConnectionOptions &options);
 
-	std::list<DiskInfo> getDiskInfo();
+	std::vector<DiskInfo> getDiskInfo();
 };
 
 #endif // REST_CLIENT_H

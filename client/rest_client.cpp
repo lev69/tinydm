@@ -18,7 +18,7 @@ RestClient::RestClient(const ConnectionOptions &options)
 {
 }
 
-std::list<DiskInfo> RestClient::getDiskInfo()
+std::vector<DiskInfo> RestClient::getDiskInfo()
 {
 	uri_builder uriBuilder;
 	uriBuilder.set_scheme(_options.schema);

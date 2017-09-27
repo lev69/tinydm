@@ -21,7 +21,7 @@ DiskInfo::DiskInfo()
 {
 }
 
-void DiskInfo::setPartitions(const list<PartitionInfo> &partList)
+void DiskInfo::setPartitions(const vector<PartitionInfo> &partList)
 {
 	_partitions = partList;
 }
@@ -31,7 +31,7 @@ void DiskInfo::addPartition(const PartitionInfo &part)
 	_partitions.push_back(part);
 }
 
-list<PartitionInfo> DiskInfo::partitions() const
+vector<PartitionInfo> DiskInfo::partitions() const
 {
 	return _partitions;
 }
@@ -54,7 +54,7 @@ ostream &operator <<(ostream &stream, const DiskInfo &info)
 	stream << "device: " << info.volume() << endl;
 	stream << "size: " << info.size() << endl;
 	stream << "partitions" << endl;
-	list<PartitionInfo> partList = info.partitions();
+	auto partList = info.partitions();
 	for_each (partList.begin(), partList.end(), Print(stream));
 	return stream;
 }

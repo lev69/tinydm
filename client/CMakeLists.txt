@@ -63,7 +63,6 @@ set(tinydm_gui_SOURCES
 	controller.cpp
 	main_window.cpp
 	rest_controller.cpp
-	disk_item_model.cpp
 	)
 
 set(SHARED_SOURCES)
